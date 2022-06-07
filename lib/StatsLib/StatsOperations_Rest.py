@@ -400,7 +400,7 @@ class StatsHelper(RestConnection):
         return map
 
     @staticmethod
-    def _validate_metrics(self, content):
+    def _validate_metrics(content):
         """
         Method to validate exposition of metrics in /_getPrometheusMetrics, /_getPrometheusMetricsHigh, /metrics endpoints
             1. Check for duplicate entries (for component other than ns-server
@@ -432,7 +432,7 @@ class StatsHelper(RestConnection):
                 if line not in lines_seen:
                     lines_seen.add(line)
                 else:
-                    self.log.info("DUPLICATE LINE: {0}".format(line))
+                    print("DUPLICATE LINE: " + str(line))
                     raise Exception("Duplicate metrics entry {0}".format(line))
                 if not check_prefixes(line):
                     raise Exception("Invalid prefix for metric {0}".format(line))
