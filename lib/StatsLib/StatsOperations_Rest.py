@@ -432,6 +432,7 @@ class StatsHelper(RestConnection):
                 if line not in lines_seen:
                     lines_seen.add(line)
                 else:
+                    self.log.info("DUPLICATE LINE: {0}".format(line))
                     raise Exception("Duplicate metrics entry {0}".format(line))
                 if not check_prefixes(line):
                     raise Exception("Invalid prefix for metric {0}".format(line))
