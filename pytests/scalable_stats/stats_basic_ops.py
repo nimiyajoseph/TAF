@@ -115,6 +115,7 @@ class StatsBasicOps(CollectionBase):
         """
         self.bucket_util.load_sample_bucket(self.cluster, TravelSample())
         self.bucket_util.load_sample_bucket(self.cluster, BeerSample())
+        self.sleep(20, "Wait before fetching metrics")
         for server in self.cluster.servers[:self.nodes_init]:
             content = StatsHelper(server).get_all_metrics()
             StatsHelper(server)._validate_metrics(content)
