@@ -118,7 +118,7 @@ class StatsBasicOps(CollectionBase):
         for server in self.cluster.servers[:self.nodes_init]:
             print("SERVER : tt")
             print(server)
-            self.sleep(120, "Wait before fetching metrics")
+            self.sleep(300, "Wait before fetching metrics")
             content = StatsHelper(server).get_all_metrics()
             StatsHelper(server)._validate_metrics(content)
         for line in content:
