@@ -400,7 +400,7 @@ class StatsHelper(RestConnection):
         return map
 
     @staticmethod
-    def _validate_metrics(content):
+    def _validate_metrics(self, content):
         """
         Method to validate exposition of metrics in /_getPrometheusMetrics, /_getPrometheusMetricsHigh, /metrics endpoints
             1. Check for duplicate entries (for component other than ns-server
