@@ -427,6 +427,8 @@ class StatsHelper(RestConnection):
         log = logger.get("test")
         log.info("Validating metrics")
         lines_seen = set()
+        print("CONTENT: ")
+        print(content)
         for line in content:
             if not line.startswith("#"):
                 if line not in lines_seen:
