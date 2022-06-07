@@ -24,7 +24,7 @@ class CbServer(object):
         EVENTING_MEM_QUOTA = "eventingMemoryQuota"
 
         class MinRAMQuota(object):
-            KV = 256
+            KV = 512
             INDEX = 256
             FTS = 256
             EVENTING = 256
